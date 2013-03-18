@@ -14,4 +14,4 @@ Feel free to fork the site.
 				<li><a href="http://erinl.ee/WSbeIl" target="_blank">Agile Web Development</a> from Pragmatic Programmers || Reference</li>
 				<li><a href="http://thenounproject.com/noun/diamond/#icon-No3228" target="_blank">Diamond</a> designed by <a href="http://thenounproject.com/jordan.delcros" target="_blank">Jordan Delcros</a> from The Noun Project</li>
 			</ul>			
-<p>Made with <3 by <a href="http://www.erinandcode.com" target="_blank">Erin</a></p>
+Made with <3 by [Erin](www.erinandcode.com") 
