@@ -1,0 +1,93 @@
+.equal-height {
+	height: 300px;
+}
+.equal-height-short {
+	height: 150px;
+}
+.equal-height-mid {
+	height: 250px;
+}
+/* Glyph, by Harry Roberts */
+		
+hr.style-eight {
+    padding: 0;
+    border: none;
+    border-top: medium double rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.48);
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "x";
+    display: inline-block;
+    position: relative; 
+    top: -0.7em;  
+    font-size: 1em;
+    padding: 0 0.25em;
+    background: none;
+}
+/*end Glyph*/
+#handsome {
+	height: 650px;
+	text-align: center;
+	background-image:url('../img/ruby-helper.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+h1{
+	font-family: "Josefin Slab", sans-serif;
+	font-size: 4.5em;
+	text-align: center;
+}
+
+.erb-html-browser {
+	padding: 50px;
+	min-height: 800px;
+}
+
+h2.erb-html-browser {
+
+}
+
+#erb {
+	background-color: #63A69F;
+}
+pre#erb {
+	color: #fff;
+}
+
+#html {
+	background-color: #F2E1AC;
+}
+pre#html{
+	color: #002f32;
+}
+
+#browser {
+	background-color: #F2836B;
+	color: #9c9b9b;
+}
+#footer {
+	background-color: #fff;
+	color: #9c9b9b;
+	padding-left: 20px;
+	padding-bottom: none;
+}
+#footer h2{
+	font-family: "Josefin Slab", sans-serif;
+	font-size: 2.5em;
+	text-align: left;
+	margin-bottom: 0;
+}
+#footer ul {
+	padding-left: 35px;
+}
+
+#footer p {
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: .7em;
+}
+
+.heart {
+	color: #FF0080;
+}

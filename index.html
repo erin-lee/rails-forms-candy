@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>ruby on rails :: form helpers</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="highlighter/prettify.css" />
+	<script src="highlighter/prettify.js"></script>
+
+</head>
+<body>
+	<div class="row" id="handsome">
+		<div class="large-12 columns">
+		</div>
+	</div>
+
+<!-- ERB -->
+	<div class="row">
+	  <div class="small-2 large-4 columns erb-html-browser" id="erb">
+	  	<h1>.erb</h1>
+	  	<div class="equal-height">
+				<code>
+		  		<pre class="prettyprint" id="erb"><%= form_for @person do |person_form| %>
+						  <%= person_form.text_field :name %>
+						   <% @person.addresses.each do |address| %>
+						    <%= person_form.fields_for address, :index => address do |address_form|%>
+						      <%= address_form.text_field :city %>
+						    &nbsp;&nbsp;<% end %>
+						  &nbsp;<% end %>
+						<% end %>
+					</pre>
+				</code>
+			</div>
+<hr class="style-eight">
+<div class="equal-height-short">
+	<code>
+		<pre class="prettyprint" id="erb">
+<%= f.text_area :description %>
+		</pre>
+	</code>
+</div>
+<hr class="style-eight">
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="erb"><%= f.select :borough, ['Brooklyn', 'Manhattan', 'Queens'] %>
+
+		 OR
+
+<%= f.select :borough, [['Brooklyn', 1], ['Manhattan', 2], ['Queens', 3]] %>
+		</pre>
+	</code>
+</div>
+<hr class="style-eight">
+
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="erb">
+<%= f.check_box :checkbox1 %>
+
+<%= f.check_box :checkbox2 %>
+
+<%= f.check_box :checkbox3 %>
+		</pre>
+	</code>
+</div>
+
+<hr class="style-eight">
+
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="erb">
+<%= f.url_field %>
+
+
+<%= f.password_field %>
+
+
+<%= f.email_field :email %>
+
+
+<%= f.telephone_field :telephone %>
+
+
+<%= f.number_field :price, :in => 1..10 %>
+
+
+<%= f.range_field :quantity, :in => 1..10 %>
+
+		</pre>
+	</code>
+</div>
+
+<hr class="style-eight">
+
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="erb">
+<%= f.select :pokemon, 
+								[ ['Pikachu'],
+								['Squirtle'],
+								['Charmander'] ]%>
+		</pre>
+	</code>
+</div>
+<hr class="style-eight">
+	<div class="equal-height-short">
+		<code>
+			<pre class="prettyprint" id="erb">
+	<%= f.submit %>
+			</pre>
+		</code>
+	</div>
+
+<hr class="style-eight">
+
+
+
+</div>
+
+<!-- HTML -->
+	  <div class="small-4 large-4 columns erb-html-browser" id="html">
+	  	<h1>.html</h1>
+	  	<div class="equal-height">
+		  	<code>
+		  		<pre class="prettyprint" id="html">&lt;form accept-charset="UTF-8" action="/people/1" class="edit_person" id="edit_person_1" method="post">
+					&lt;input id="person_name" name="person[name]" size="30" type="text" />
+					&lt;input id="person_address_23_city" name="person[address][23][city]" size="30" type="text" />
+					&lt;input id="person_address_45_city" name="person[address][45][city]" size="30" type="text" />
+					&lt;/form>
+					</pre>
+				</code>
+			</div>
+<hr class="style-eight">
+
+	<div class="equal-height-short">
+		<code>
+			<pre class="prettyprint" id="html">&lt;textarea id="person_description" name="person[description]" rows="4" cols="50"&gt;&lt;/textarea&gt;
+			</pre>
+		</code>
+	</div>
+<hr class="style-eight">
+	<div class="equal-height-mid">
+		<code>
+			<pre class="prettyprint" id="html">
+&lt;label for="radio1"&gt;&lt;input name="radio1" type="radio" id="radio1" CHECKED&gt;
+Brooklyn&lt;/label&gt;
+
+&lt;label for="radio1"&gt;&lt;input name="radio1" type="radio" id="radio1"&gt;
+Manhattan&lt;/label&gt;
+
+&lt;label for="radio1"&gt;&lt;input name="radio1" type="radio" id="radio1"&gt;
+Queens&lt;/label&gt;
+    </pre>
+  </code>
+</div>
+<hr class="style-eight">
+
+
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="html">
+&lt;label for="checkbox1">&lt;input type="checkbox" id="checkbox1">Brush Teeth&lt;/label>
+
+&lt;label for="checkbox2">&lt;input type="checkbox" id="checkbox2" CHECKED>Comb Hair&lt;/label>
+
+&lt;label for="checkbox3">&lt;input type="checkbox" CHECKED id="checkbox3">Call Mom&lt;/label>
+    </pre>
+  </code>
+</div>
+
+<hr class="style-eight">
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="html">
+&lt;input type="url" id="homepage">
+
+
+&lt;input type="email" id="email">
+
+
+&lt;input type="tel" id="telephone">
+
+
+&lt;input type="password" id="password">
+
+
+&lt;input type="number" id="price" min="1" max="10">
+
+
+&lt;input type="range" id="quantity" min="1" max="10">
+    </pre>
+  </code>
+</div>
+
+<hr class="style-eight">
+<div class="equal-height-mid">
+	<code>
+		<pre class="prettyprint" id="html">
+&lt;select id="pokemon" name="pokemon">
+
+&lt;option value="Pikachu">Pikachu&lt;/option>
+
+&lt;option value="Squirtle">Squirtle&lt;/option>
+
+&lt;option value="Charmander">Charmander&lt;/option>
+
+&lt;/select>
+   
+    </pre>
+  </code>
+</div>
+
+<hr class="style-eight">
+<div class="equal-height-short">
+	<code>
+		<pre class="prettyprint" id="html">
+	&lt;input type="submit">
+   
+    </pre>
+  </code>
+</div>
+<hr class="style-eight">
+</div>
+
+<!-- BROWSER -->
+<div class="small-6 large-4 columns erb-html-browser" id="browser">
+	<h1>browser</h1>
+	<div class="equal-height">
+		<form accept-charset="UTF-8" action="/people/1" class="edit_person" id="edit_person_1" method="post">
+		<div class="row collapse">
+			<div class="small-9 columns">
+			<input id="person_name" name="person[name]" size="30" type="text" placeholder="enter name here" />
+      </div>
+      <div class="small-3 columns">
+          	<span class="postfix radius">Name</span>
+      </div>
+		</div>
+		<div class="row collapse">
+			<div class="small-9 columns">
+			<input id="person_address_23_city" name="person[address][23][city]" size="15" type="text" placeholder="enter address here" />
+			</div>
+			<div class="small-3 columns">
+      <span class="postfix radius">Address</span>
+	        </div>
+				</div>
+				<div class="row collapse">
+					<div class="small-9 columns">
+						<input id="person_address_45_city" name="person[address][45][city]" size="30" type="text" placeholder="enter another address here" />
+					</div>
+					<div class="small-3 columns">
+						<span class="postfix radius">Address</span>
+	        </div>
+				</div>
+				</form>
+			</p>
+	  </div>
+<hr class="style-eight">
+	  <div class="equal-height-short">
+	  	<div class="large-12 columns">
+				<textarea rows="4" cols="50" placeholder="description here" ></textarea>
+	  	</div>
+	  </div>
+<hr class="style-eight">
+	<div class="equal-height-mid">
+    <div class="large-12 columns">
+    	<form class="custom">
+      <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;" CHECKED><span class="custom radio checked"></span> Brooklyn</label>
+      <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Manhattan</label>
+      <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Queens</label>
+		  </form>
+		 </div>
+		</div>
+
+<hr class="style-eight">
+
+<div class="equal-height-mid">
+  <div class="large-12 columns">
+  	<form class="custom">
+      <label for="checkbox1"><input type="checkbox" id="checkbox1" style="display: none;"><span class="custom checkbox"></span> Brush Teeth</label>
+      <label for="checkbox2"><input type="checkbox" id="checkbox2" CHECKED style="display: none;"><span class="custom checkbox checked"></span> Comb Hair</label>
+      <label for="checkbox3"><input type="checkbox" CHECKED id="checkbox3" style="display: none;"><span class="custom checkbox checked"></span> Call Mom</label>
+    </form>
+  </div>
+</div>
+
+<hr class="style-eight">
+<div class="equal-height-mid">
+<form>
+  <div class="row collapse">
+    <div class="small-3 large-2 columns">
+      <span class="prefix">http://</span>
+    </div>
+    <div class="small-9 large-10 columns">
+      <input type="url" placeholder="Enter your URL...">
+    </div>
+  </div>
+
+	<div class="row collapse">
+		<div class="small-9 columns">
+		<input size="20" type="password" placeholder="Password" />
+		</div>
+		<div class="small-3 columns">
+      <span class="postfix radius">Password</span>
+	  </div>
+	</div>
+
+	<div class="row collapse">
+		<div class="small-9 columns">
+		<input size="20" type="email" placeholder="user@email.com" />
+		</div>
+		<div class="small-3 columns">
+      <span class="postfix radius">Email</span>
+	  </div>
+	</div>	
+
+	<div class="row collapse">
+		<div class="small-9 columns">
+		<input size="20" type="tel" placeholder="555-555-5555" />
+		</div>
+		<div class="small-3 columns">
+      <span class="postfix radius">Tel</span>
+	  </div>
+	</div>
+
+<div class="row">
+	<div class="large-6 columns">
+		<div class="row collapse">
+			<div class="large-6 small-6 columns">
+			<input size="3" type="number" placeholder="Number 1 through 10" max="10" min="1"/>
+			</div>
+			<div class="large-6 small-6 columns">
+	      <span class="postfix radius">Price</span>
+		  </div>
+		</div>
+	</div>
+
+	<div class="large-6 columns">
+		<div class="row collapse">
+			<div class="large-6 small-6 columns">
+				<label for="range">Quantity:</label>
+			<input size="3" type="range" placeholder="5" max="10" min="1"/>
+			</div>
+			<div class="large-6 small-6 columns">
+
+		  </div>
+		</div>
+	</div>
+</div>
+
+</form>
+</div>
+<hr class="style-eight">
+
+<div class="equal-height-mid">
+<form class="custom">
+	<div class="row collapse">
+	    <div class="small-8 columns">
+	      <div class="custom dropdown"><a href="#" class="current">Pokemon</a><a href="#" class="selector"></a><ul><li class="selected">Pikachu</li><li>Squirtle</li><li>Charmander</li></ul>
+	      </div>
+	    </div>
+	    <div class="small-4 columns">
+	      <a href="#" class="button postfix">I Choose You!</a>
+	    </div>
+	  </div>
+	</form>
+</div>
+	<hr class="style-eight">
+	<div class="equal-height-short" align="center">
+		<input type="submit" class="button">
+	</div>
+	<hr class="style-eight">
+</div>
+
+	<div class="row" id="footer">
+		<div class="large-12 columns">
+			<h2>credits :</h2>
+			<ul>
+				<li><a href="http://foundation.zurb.com/" target="_blank">Foundation 4</a> by Zurb || Front-end Framework</li>
+				<li><a href="http://codeschool.com/" target="_blank">Rails For Zombies 2</a> by Codeschool || Reference</li>
+				<li><a href="http://apidock.com/rails/" target="_blank">Ruby on Rails</a> by Apidock || Reference</li>
+				<li><a href="http://erinl.ee/WSbeIl" target="_blank">Agile Web Development</a> from Pragmatic Programmers || Reference</li>
+				<li><a href="http://thenounproject.com/noun/diamond/#icon-No3228" target="_blank">Diamond</a> designed by <a href="http://thenounproject.com/jordan.delcros" target="_blank">Jordan Delcros</a> from The Noun Project</li>
+			</ul>			
+			<p>Made with <span class="heart"><3</span> by <a href="http://www.erinandcode.com" target="_blank">Erin</a></p>
+		</div>
+	</div>
+
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>  
+  
+  <script src="js/foundation/foundation.forms.js"></script>
+<!--   
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+   -->
+  
+  <script>
+    $(document).foundation();
+  </script>
+
+  <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+</body>
+</html>
