@@ -5,7 +5,7 @@
 .pln { color: #000 }  /* plain text */
 
 @media screen {
-  .str { color: #080 }  /* string content */
+  .str { color: #69EBFA }  /* string content */
   .kwd { color: #008 }  /* a keyword */
   .com { color: #800 }  /* a comment */
   .typ { color: #606 }  /* a type name */
@@ -14,7 +14,7 @@
   .pun, .opn, .clo { color: #000 }
   .tag { color: #008 }  /* a markup tag name */
   .atn { color: #606 }  /* a markup attribute name */
-  .atv { color: #080 }  /* a markup attribute value */
+  .atv { color: #E01B6A }  /* a markup attribute value */
   .dec, .var { color: #606 }  /* a declaration; a variable name */
   .fun { color: red }  /* a function name */
 }
@@ -29,7 +29,7 @@
   .pun, .opn, .clo { color: #440 }
   .tag { color: #006; font-weight: bold }
   .atn { color: #404 }
-  .atv { color: #060 }
+  .atv { color: #E01B6A }
 }
 
 /* Put a border around prettyprinted code snippets. */
