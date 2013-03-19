@@ -1,7 +1,8 @@
-##See [Rails Form Helpers](http://hashtagerinl.github.com/rails-forms-candy/).##
+##See [Rails Form Helpers Chart](http://hashtagerinl.github.com/rails-forms-candy/).##
 -----
 
 I created the site as a form reference for myself.  
+Note: I only covered the form_for helpers (excluded the form_tag) for simplicity.
 
 Let me know of any corrections. Contributions, edits are welcomed.
 

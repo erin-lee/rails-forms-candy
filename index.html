@@ -33,9 +33,6 @@
 						   <% @person.addresses.each do |address| %>
 						    <%= person_form.fields_for address, :index => address do |address_form|%>
 						      <%= address_form.text_field :city %>
-						    &nbsp;&nbsp;<% end %>
-						  &nbsp;<% end %>
-						<% end %>
 					</pre>
 				</code>
 			</div>
@@ -50,11 +47,11 @@
 <hr class="style-eight">
 <div class="equal-height-mid">
 	<code>
-		<pre class="prettyprint" id="erb"><%= f.select :borough, ['Brooklyn', 'Manhattan', 'Queens'] %>
+		<pre class="prettyprint" id="erb"><%= f.radio_button :borough, 'Brooklyn', checked: true %>
 
-		 OR
+<%= f.radio_button :borough, 'Manhattan' %>
 
-<%= f.select :borough, [['Brooklyn', 1], ['Manhattan', 2], ['Queens', 3]] %>
+<%= f.radio_button :borough, 'Queens' %>
 		</pre>
 	</code>
 </div>
@@ -115,6 +112,8 @@
 		<code>
 			<pre class="prettyprint" id="erb">
 	<%= f.submit %>
+
+ 	 <% end %>
 			</pre>
 		</code>
 	</div>
@@ -134,7 +133,6 @@
 					&lt;input id="person_name" name="person[name]" size="30" type="text" />
 					&lt;input id="person_address_23_city" name="person[address][23][city]" size="30" type="text" />
 					&lt;input id="person_address_45_city" name="person[address][45][city]" size="30" type="text" />
-					&lt;/form>
 					</pre>
 				</code>
 			</div>
@@ -224,6 +222,7 @@ Queens&lt;/label&gt;
 		<pre class="prettyprint" id="html">
 	&lt;input type="submit">
    
+	    &lt;/form>
     </pre>
   </code>
 </div>
